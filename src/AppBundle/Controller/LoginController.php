@@ -16,12 +16,12 @@ class LoginController extends Controller
     */
     public function formAction()
     {
-        $post = new Post();
-        $form = $this->createForm(PostType::class, $post);
-        
+//        $post = new Post();
+//        $form = $this->createForm(PostType::class, $post);
+//        
         return $this->render(
-            'login/login.html.twig',
-            array('form', $form)
+            'login/login.html.twig'
+//            array('form', $form)
         );
     }
 }
