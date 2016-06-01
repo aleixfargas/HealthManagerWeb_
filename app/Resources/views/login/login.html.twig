@@ -35,25 +35,10 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/login.css', 'login') }}" />
-    
-    <!-- Custom Theme files -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/minimal_admin_panel/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/minimal_admin_panel/css/font-awesome.css') }}">
 {% endblock %}
 
 {% block javascripts %}
-    <script type="application/x-javascript"> 
-        addEventListener("load", function(){ 
-            setTimeout(hideURLbar, 0); 
-        }, false); 
-        function hideURLbar(){ 
-            window.scrollTo(0,1); 
-        } 
-    </script>
     <script src="{{ asset('js/login.js', 'login') }}"></script>
-    
-    <script src="{{ asset('assets/vendor/minimal_admin_panel/js/jquery.nicescroll.js') }}"></script>
-    <script src="{{ asset('assets/vendor/minimal_admin_panel/js/scripts.js') }}"></script>
 {% endblock %}
 
 

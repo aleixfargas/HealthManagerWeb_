@@ -1,0 +1,33 @@
+{% extends 'base_menu.html.twig' %}
+
+{% block content_main %}
+    <!--banner-->	
+    <div class="banner">
+        <h2>
+            <a href="index.html">Home</a>
+            <i class="fa fa-angle-right"></i>
+            <span>Calendar</span>
+        </h2>
+    </div>
+    <!--//banner-->
+    <!--gallery-->
+    <div class="calendar">
+        <div class="custom-calendar-wrap custom-calendar-full">
+            <div class="custom-header">
+                    <h3 class="custom-month-year">
+                        <span id="custom-month" class="custom-month"> </span>
+                        <span id="custom-year" class="custom-year"> </span>
+                        <nav>
+                            <span id="custom-prev" class="custom-prev"> </span>
+                            <span id="custom-next" class="custom-next"> </span>
+                            <span id="custom-current" class="custom-current" title="Got to current date"></span>
+                        </nav>
+                        <div class="clearfix"> </div>
+                    </h3>
+            </div>
+            {% block calendar %}{% endblock %}
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!--//gallery-->
+{% endblock %}

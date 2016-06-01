@@ -7,15 +7,38 @@
         
         <title>{% block title %}HealthManager{% endblock %}</title>
         
-        {% block stylesheets %}{% endblock %}
+        <script type="application/x-javascript"> 
+            addEventListener("load", function(){ 
+                setTimeout(hideURLbar, 0); 
+            }, false); 
+            function hideURLbar(){ 
+                window.scrollTo(0,1); 
+            } 
+        </script>
         
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
-        
+
+        <!-- Jquery Files -->
         <script src="{{ asset('assets/vendor/minimal_admin_panel/js/jquery.min.js') }}"></script>
+
+        <!-- Bootstrap Files -->
+        <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+        <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        
+        <!-- Custom Theme files -->
+        <link rel="stylesheet" href="{{ asset('assets/vendor/minimal_admin_panel/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendor/minimal_admin_panel/css/font-awesome.css') }}">
+                
+        {% block menu_javascripts %}{% endblock %}
+        {% block menu_stylesheets %}{% endblock %}
+        {% block stylesheets %}{% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        <!--scrolling js-->
+        <script src="{{ asset('assets/vendor/minimal_admin_panel/js/jquery.nicescroll.js') }}"></script>
+        <script src="{{ asset('assets/vendor/minimal_admin_panel/js/scripts.js') }}"></script>
+        <!--//scrolling js-->
     </body>
 </html>

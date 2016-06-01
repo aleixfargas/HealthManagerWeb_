@@ -8,8 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use AppBundle\Form\PostType;
 
-class LoginController extends Controller
-{
+class LoginController extends Controller{
     
     /**
      * @Route("/login")
