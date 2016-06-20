@@ -25,6 +25,12 @@
                         <div class="clearfix"> </div>
                     </h3>
             </div>
+            <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                <ul id="myTab" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="/calendar/month" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Month</a></li>
+                    <li role="presentation"><a href="/calendar/day" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Day</a></li>
+                </ul>
+            </div>
             {% block calendar %}{% endblock %}
             <div class="clearfix"> </div>
         </div>

@@ -11,7 +11,10 @@ security:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+            form_login:
+                check_path: _security_check
+                login_path: /login
+            security: true
 
         main:
             anonymous: ~

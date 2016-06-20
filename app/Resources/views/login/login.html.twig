@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% if error %}
+        <div class="error">{{ message }}</div>
+    {% endif %}
     <div class="login">
         <h1>HealthManager</h1>
         <div class="login-bottom">
-            <h2>Login</h2>
-            <form>
+            <h2>Signin</h2>
+            <form action={{ path('signin') }}" method="post">
                 <div class="col-md-6">
                     <div class="login-mail">
                         <input type="text" placeholder="Email" required="">

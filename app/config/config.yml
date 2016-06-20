@@ -32,6 +32,8 @@ framework:
     http_method_override: true
     assets:
         packages:
+            base:
+                base_path: assets/base/
             login:
                 base_path: assets/login/
             calendar:
