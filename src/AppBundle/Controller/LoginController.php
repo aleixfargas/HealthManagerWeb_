@@ -29,9 +29,8 @@ class LoginController extends Controller{
     */
     public function signinAction(){
 //        Exemple login
-//        https://knpuniversity.com/screencast/symfony2-ep2/login-form2
+//        http://symfony.com/doc/current/book/routing.html
         
-        return $this->redirectToRoute('/calendar/year');
-        
+        return $this->redirectToRoute('calendar-month');        
     }
 }

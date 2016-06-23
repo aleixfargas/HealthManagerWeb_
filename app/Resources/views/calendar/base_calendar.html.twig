@@ -4,7 +4,7 @@
     <!--banner-->	
     <div class="banner">
         <h2>
-            <a href="index.html">Home</a>
+            <a href="#">Home</a>
             <i class="fa fa-angle-right"></i>
             <span>Calendar</span>
         </h2>
@@ -12,25 +12,17 @@
     <!--//banner-->
     <!--gallery-->
     <div class="calendar">
+        <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs" role="tablist">
+{#                <li role="presentation" class="active"><a href={{ path('calendar-month') }} id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Month</a></li>#}
+{#                <li role="presentation"><a href={{ path('calendar-week') }} role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Week</a></li>#}
+{#                <li role="presentation"><a href={{ path('calendar-day') }} role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Day</a></li>#}
+                <li role="presentation" {% if month %} class="active" {% endif %}><a href={{ path('calendar-month') }} role="tab" id="profile-tab">Month</a></li>
+                <li role="presentation" {% if week %} class="active" {% endif %}><a href={{ path('calendar-week') }} role="tab" id="profile-tab">Week</a></li>
+                <li role="presentation" {% if day %} class="active" {% endif %}><a href={{ path('calendar-day') }} role="tab" id="profile-tab">Day</a></li>
+            </ul>
+        </div>
         <div class="custom-calendar-wrap custom-calendar-full">
-            <div class="custom-header">
-                    <h3 class="custom-month-year">
-                        <span id="custom-month" class="custom-month"> </span>
-                        <span id="custom-year" class="custom-year"> </span>
-                        <nav>
-                            <span id="custom-prev" class="custom-prev"> </span>
-                            <span id="custom-next" class="custom-next"> </span>
-                            <span id="custom-current" class="custom-current" title="Got to current date"></span>
-                        </nav>
-                        <div class="clearfix"> </div>
-                    </h3>
-            </div>
-            <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-                <ul id="myTab" class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="/calendar/month" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Month</a></li>
-                    <li role="presentation"><a href="/calendar/day" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Day</a></li>
-                </ul>
-            </div>
             {% block calendar %}{% endblock %}
             <div class="clearfix"> </div>
         </div>
