@@ -20,10 +20,11 @@
                     </div>
                     <div class="login-mail login-type">
                         <select id="usertype" type="text" placeholder="User Type" required="">
+                            <option value=""></option>
                             {% for user_type in user_types -%}
                                  <option value="{{ user_type.id }}">{{ user_type.type }}</option>
                             {%- endfor %}
-                        </select> 
+                        </select>
                     </div>
                     
                     {#<a class="news-letter " href="#">
