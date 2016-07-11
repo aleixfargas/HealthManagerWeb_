@@ -11,21 +11,29 @@ use AppBundle\Form\PostType;
 class LoginController extends Controller{
     private $error = false;
     private $errorMessage = '';
+    private $userTypes_array = array();
+    
     /**
      * @Route("/login", name="login")
     */
     public function formAction()
     {
+        $this->getUserTypes();
+
 //        $post = new Post();
 //        $form = $this->createForm(PostType::class, $post);
-//        
+
         return $this->render(
-            'login/login.html.twig', array('error'=>$this->error, 'message'=>$this->errorMessage)
+            'login/login.html.twig', array(
+                'error'=>$this->error,
+                'message'=>$this->errorMessage, 
+                'user_types'=>$this->userTypes_array
+            )
         );
     }
     
     /**
-     * @Route("/signin", name="signin", )
+     * @Route("/signin", name="signin")
     */
     public function signinAction(){
 //        Exemple login
@@ -33,4 +41,27 @@ class LoginController extends Controller{
         
         return $this->redirectToRoute('calendar-month');        
     }
+    
+    private function getUserTypes(){
+        $result = false;
+        
+        $logger = $this->get('logger');        
+        $userTypes = $this->getDoctrine()->getRepository('AppBundle:UserTypes')->findAll();
+        
+        if (!empty($userTypes)) {
+            $result = true;
+            foreach($userTypes as $userType){
+                $id = $userType->getId();
+                $type = $userType->getType();
+                array_push($this->userTypes_array, ['id' => $id, 'type' => $type]);
+            }
+        } else {
+            throw $this->createNotFoundException(
+                'No userTypes founded'
+            );
+        }
+        
+        return $result;
+    }
+    
 }
