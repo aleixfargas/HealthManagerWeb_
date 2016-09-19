@@ -18,20 +18,20 @@
                         <input id="password" type="password" placeholder="Password" required="">
                         <i class="fa fa-lock"></i>
                     </div>
-                    <div class="login-mail login-type">
-                        <select id="usertype" type="text" placeholder="User Type" required="">
-                            <option value=""></option>
-                            {% for user_type in user_types -%}
-                                 <option value="{{ user_type.id }}">{{ user_type.type }}</option>
-                            {%- endfor %}
-                        </select>
-                    </div>
                     
                     {#<a class="news-letter " href="#">
                         <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
                     </a>#}
                 </div>
                 <div class="col-md-6 login-do">
+                    <div class="login-type login-mail">
+                        <select id="usertype" class="login-selector" type="text" placeholder="User Type" required="">
+                            <option value=""></option>
+                            {% for user_type in user_types -%}
+                                 <option value="{{ user_type.id }}">{{ user_type.type }}</option>
+                            {%- endfor %}
+                        </select>
+                    </div>
                     <label class="hvr-shutter-in-horizontal login-sub">
                         <input type="submit" value="login">
                     </label>
