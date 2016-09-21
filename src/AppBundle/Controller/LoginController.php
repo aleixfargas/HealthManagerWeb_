@@ -26,7 +26,7 @@ class LoginController extends Controller{
         return $this->render(
             'login/login.html.twig', array(
                 'error'=>$this->error,
-                'message'=>$this->errorMessage, 
+                'message'=>$this->errorMessage,
                 'user_types'=>$this->userTypes_array
             )
         );

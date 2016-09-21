@@ -116,6 +116,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">Rackham<i class="caret"></i></span><img src="{{ asset('assets/vendor/minimal_admin_panel/images/wo.jpg') }}"></a>
+                        <!-- <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">User<i class="caret"></i></span></a> -->
                         <ul class="dropdown-menu " role="menu">
                             <li><a href="/profile"><i class="fa fa-user"></i>Edit Profile</a></li>
                             <li><a href="/inbox"><i class="fa fa-envelope"></i>Inbox</a></li>
@@ -132,6 +133,13 @@
                         <li>
                             <a href="{{ url('dashboard') }}" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label">Dashboards</span> </a>
                         </li>
+                        <li>
+                            <a href="{{ url('calendar-month') }}" class=" hvr-bounce-to-right"><i class="fa fa-calendar nav_icon "></i><span class="nav-label">Calendar</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ url('calendar-month') }}" class=" hvr-bounce-to-right"><i class="fa fa-calendar nav_icon "></i><span class="nav-label">Patients</span></a>
+                        </li>
+                        <!-- 
                         <li>
                             <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Menu Levels</span><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -173,6 +181,7 @@
                                 <li><a href="signup.html" class=" hvr-bounce-to-right"><i class="fa fa-sign-in nav_icon"></i>Singup</a></li>
                             </ul>
                         </li>
+                        -->
                     </ul>
                 </div>
             </div>
