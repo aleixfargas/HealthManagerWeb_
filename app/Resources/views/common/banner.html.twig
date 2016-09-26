@@ -1,0 +1,14 @@
+{% block banner %}
+    {% if section_array is defined %}
+        <div class="banner">
+            <h2>
+                <a href="#">Home</a>
+                {% for section in section_array -%}
+                    <i class="fa fa-angle-right"></i>
+                    <span> {{ section.name }}</span>
+                {%- endfor %}
+{#                <span>{{ 'base.global_section_calendar'|trans({}, 'base') }}</span>#}
+            </h2>
+        </div>
+    {% endif %}
+{% endblock %}
