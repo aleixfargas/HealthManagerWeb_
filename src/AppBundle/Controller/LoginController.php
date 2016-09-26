@@ -18,6 +18,7 @@ class LoginController extends Controller{
     */
     public function formAction()
     {
+//        $this->get('translator')->setLocale('en');
         $this->getUserTypes();
 
 //        $post = new Post();
@@ -44,15 +45,13 @@ class LoginController extends Controller{
     
     private function getUserTypes(){
         $result = false;
-        
-        $logger = $this->get('logger');        
         $userTypes = $this->getDoctrine()->getRepository('AppBundle:UserTypes')->findAll();
-        
+
         if (!empty($userTypes)) {
             $result = true;
             foreach($userTypes as $userType){
                 $id = $userType->getId();
-                $type = $userType->getType();
+                $type = $this->get('translator')->trans($userType->getType(), array(), 'login');
                 array_push($this->userTypes_array, ['id' => $id, 'type' => $type]);
             }
         } else {

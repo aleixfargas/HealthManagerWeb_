@@ -15,7 +15,12 @@ class CalendarController extends Controller{
     */
     public function monthCalendarAction(){      
         return $this->render(
-            'calendar/month_calendar.html.twig', array('month'=>true, 'week'=>false, 'day'=>false)
+            'calendar/month_calendar.html.twig', array( 
+                'section_array' =>array('name'=>'base.global_section_calendar'), 
+                'month'=>true, 
+                'week'=>false, 
+                'day'=>false
+            )
         );
     }
     
