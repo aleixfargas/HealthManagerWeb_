@@ -34,11 +34,11 @@ class LoginController extends Controller{
     }
     
     /**
-     * @Route("/signin", name="signin")
+     * @Route("/loginAction", name="loginAction")
     */
-    public function signinAction(){
+    public function loginAction(Request $request){
 //        Exemple login
-//        http://symfony.com/doc/current/book/routing.html
+//        http://symfony.com/doc/current/security/entity_provider.html
         
         return $this->redirectToRoute('calendar-month');        
     }
