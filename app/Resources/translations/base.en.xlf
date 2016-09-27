@@ -10,6 +10,10 @@
                 <source>base.global_search</source>
                 <target>Search...</target>
             </trans-unit>
+            <trans-unit id="global_section_home">
+                <source>base.global_section_home</source>
+                <target>Home</target>
+            </trans-unit>
             <trans-unit id="global_section_dashboard">
                 <source>base.global_section_dashboard</source>
                 <target>Dashboard</target>

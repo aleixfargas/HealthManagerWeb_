@@ -9,6 +9,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\PostType;
 
 class DashboardController extends Controller{
+    private $section_name = 'base.global_section_dashboard';
+    
+    private function getTranslatedSectionName(){
+        return $this->get('translator')->trans($this->section_name, array(), 'base');
+    }
     
     /**
      * @Route("/dashboard", name="dashboard")
@@ -16,7 +21,10 @@ class DashboardController extends Controller{
     public function viewAction()
     {
         return $this->render(
-            'dashboard/dashboard.html.twig'
+            'dashboard/dashboard.html.twig', array(
+                'is_section' =>true,
+                'sections' => [['url'=>$this->generateUrl('dashboard'), 'name'=>$this->getTranslatedSectionName()]]
+            )
         );
     }
 }

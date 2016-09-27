@@ -1,14 +1,15 @@
 {% block banner %}
-    {% if section_array is defined %}
+    {% if is_section is defined %}
+        <!--banner-->	
         <div class="banner">
             <h2>
-                <a href="#">Home</a>
-                {% for section in section_array -%}
+                <a href="#">{{ 'base.global_section_home'|trans({}, 'base') }}</a>
+                {% for section in sections -%}
                     <i class="fa fa-angle-right"></i>
-                    <span> {{ section.name }}</span>
+                    <span> {{ section.name }} </span>
                 {%- endfor %}
-{#                <span>{{ 'base.global_section_calendar'|trans({}, 'base') }}</span>#}
             </h2>
         </div>
+        <!--//banner-->
     {% endif %}
 {% endblock %}
