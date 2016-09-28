@@ -38,7 +38,9 @@ class LoginController extends Controller{
     */
     public function loginAction(Request $request){
 //        Exemple login
-//        http://symfony.com/doc/current/security/entity_provider.html
+//        http://symfony.com/doc/current/security/entity_provider.html --> Hard Way, without form
+//        http://symfony.com/doc/current/doctrine/registration_form.html -> Form Login
+//        FOSUser recomeded, for the moment not implemented
         
         return $this->redirectToRoute('calendar-month');        
     }
